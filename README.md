@@ -1,5 +1,5 @@
 <div align="center">
-    <h1>I`m the Boss自动投递脚本</h1>
+    <h1>Super Employee自动投递脚本</h1>
     <img src="https://img.shields.io/github/license/JasonYANG170/IM_THE_BOSS?label=License&style=for-the-badge">
     <img src="https://img.shields.io/github/commit-activity/w/JasonYANG170/IM_THE_BOSS?style=for-the-badge">
 <img src="https://img.shields.io/github/languages/count/JasonYANG170/IM_THE_BOSS?&style=for-the-badge">
@@ -37,6 +37,7 @@
 - ✅ 自定义筛选 
 - ✅ 自动投递直到上限
 - ✅ 定时投递
+- ✅ 通知提醒
 - 🚧 自定义招呼
 - 🚧 优先投递活跃Boss  
 - 🚧 AI对话智能应答  
