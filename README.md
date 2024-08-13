@@ -43,3 +43,8 @@
 
 ## 开源协议
 本项目遵循GPL3.0开源协议，如果您有更好的建议，欢迎PR
+
+## 喜欢这个项目，请为我点个Star ⭐ 
+
+[![Star History Chart](https://api.star-history.com/svg?repos=JasonYANG170/IM_THE_BOSS&type=Date)](https://star-history.com/#star-history/star-history&Date)
+
