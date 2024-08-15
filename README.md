@@ -19,7 +19,9 @@
 ## 说明
 本项目致力于帮助24届1179万应届毕业生及25届实习生招聘投递  
 
-本项目处于开发阶段，计划于**08/18日前完成提交**，欢迎测试
+## 教程
+本程序现以上线，Wiki教程正在编辑，稍后提交  
+https://github.com/JasonYANG170/Super_Employee/wiki
 
 ## 部署平台
 - ✅Github Action  
