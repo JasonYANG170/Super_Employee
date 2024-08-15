@@ -35,13 +35,14 @@ https://github.com/JasonYANG170/Super_Employee/wiki
 - 🚧 Boss直聘  
 - 🚧 51 Job
 - 🚧 Linkedin
-## 计划功能
+## 功能
 - ✅ 自定义筛选 
 - ✅ 自动投递直到上限
 - ✅ 定时投递
 - ✅ 通知提醒
-- 🚧 自定义招呼
-- 🚧 优先投递活跃Boss  
+- ✅ 更新提醒
+- ✅ 优先投递活跃Boss 
+- 🚧 自定义招呼 
 - 🚧 AI对话智能应答  
 
 ## 开源协议
