@@ -24,9 +24,9 @@
 https://github.com/JasonYANG170/Super_Employee/wiki
 
 ## 部署平台
-- 🚧Github Action  
-- ✅Qinglong panel
-- 🚧Local
+- 🚧 Github Action  
+- ✅ Qinglong panel or Server
+- ✅ Local
 - 🚧 DockerHub  
 (除Linkedin外推荐使用中国IP部署)
 ## 支持平台
