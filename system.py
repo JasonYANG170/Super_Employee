@@ -1,5 +1,5 @@
 successful_deliveries = []
-version='V2.0'
+version='V3.0'
 ResultUrl = 'http://www.pushplus.plus/send'
 shixiseng_SearchUrl = "https://apigateway-h3.shixiseng.com/api/interns/v3.0/interns/wxz/search/v4"
 shixiseng_GroupUrl = "https://apigateway-h3.shixiseng.com/api/deliver/v3.0/deliver/options"
