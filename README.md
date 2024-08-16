@@ -32,7 +32,7 @@ https://github.com/JasonYANG170/Super_Employee/wiki
 ## 支持平台
 - ✅ 实习僧  
 - ✅ 翼展翅  
-- 🚧 Boss直聘  
+- ✅ Boss直聘  
 - 🚧 51 Job
 - 🚧 Linkedin
 ## 功能
@@ -42,8 +42,6 @@ https://github.com/JasonYANG170/Super_Employee/wiki
 - ✅ 通知提醒
 - ✅ 更新提醒
 - ✅ 优先投递活跃Boss 
-- 🚧 自定义招呼 
-- 🚧 AI对话智能应答  
 
 ## 开源协议
 本项目遵循GPL3.0开源协议，如果您有更好的建议，欢迎PR
