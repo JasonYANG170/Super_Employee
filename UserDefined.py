@@ -16,7 +16,7 @@ deviceName='HUAWEI'
 # 是否启用实习僧
 shixiseng_state = 1
 yizhanchi_state = 1
-
+bosszhipin_state = 1
 # --------------实习僧配置项--------------------
 # 是否投递(不投递:0,投递优先在线简历:1,投递优先离线简历:2)
 shixiseng_poststate = 0
@@ -30,27 +30,26 @@ shixiseng_Search = {
     'nature': "",  # 类型：股份制企业|合伙企业
     'scale': "",  # 规模：50-150人|500-2000人
     'ipo': "",  # 融资：B轮|A轮
-    'k': "",  # 岗位                     *
-    'degree': "",  # 学历：大专|本科
+    'k': "嵌入式",  # 岗位                     *
+    'degree': "大专|本科",  # 学历：大专|本科
     'emp_chance': "",  # 空间：提供转正|面议
     'intention': "",  # 需求：校招|实习
     'internship_duration': "",  # 在岗时间：1个月|3个月以上
     'days_per_week': "",  # 工作时间：4天|1天
     'payment_per_day': ""  # 日薪：200-300|100以下
 }
-# --------------翼展翅配置项--------------------
-# 吐槽一下，翼展翅的数据非常的混乱，有小概率会出现城市筛选失效
+# --------------易展翅配置项--------------------
 yizhanchi_poststate = 0
 yizhanchi_city=""
-yizhanchi_Token =""
+yizhanchi_Cookie =""
 yizhanchi_Search = {
-    'page_size': "50",#查询范围  *
+    'page_size': "1000",#查询范围  *
     'page': "1",#当前页面        *
     'positiontype': "",
     'minsalary': "",#最低工资
     'maxsalary': "",#最高工资
     'show_third_position': "",
-    'keyword': "",#岗位     *
+    'keyword': "软件 ",#岗位     *
     'region_id': "",
     'intern_time_id': "",
     'intern_cycle_id': "",
@@ -66,4 +65,27 @@ yizhanchi_Search = {
     'port': "",
     'region_type': "",
     'sort': ""
+}
+# --------------Boss直聘配置项--------------------
+bosszhipin_poststate = 0
+bosszhipin_city=""
+bosszhipin_Cookie =""
+bosszhipin_Search = {
+    'scene': "1",
+    'query': "嵌入式",#岗位
+    'city': "",
+    'experience': "",
+    'payType': "",
+    'partTime': "",
+    'degree': "",
+    'industry': "",
+    'scale': "",
+    'stage': "",
+    'position': "",
+    'jobType': "",
+    'salary': "",
+    'multiBusinessDistrict': "",
+    'multiSubway': "",
+    'page': "1",
+    'pageSize': "5000"
 }
