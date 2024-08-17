@@ -2,7 +2,8 @@ import json
 import requests
 from datetime import datetime
 import time
-from UserDefined import yizhanchi_Search, yizhanchi_city, deviceName, yizhanchi_poststate, yizhanchi_Cookie
+from UserDefined import yizhanchi_Search, yizhanchi_city, deviceName, yizhanchi_poststate, yizhanchi_Cookie, \
+    yizhanchi_postnumber
 from system import yizhanchi_SearchUrl, yizhanchi_PostUrl, successful_deliveries, yizhanchi_CitylistUrl
 
 def run_yizhanchi_script():
@@ -46,6 +47,8 @@ def run_yizhanchi_script():
         data = response.json()
         items = data['data']['data']
 
+        if yizhanchi_successCount>=yizhanchi_postnumber:
+            break
         if not items:
             break
 

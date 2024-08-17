@@ -22,6 +22,7 @@ maimai_state = 0
 wubatongcheng_state = 0
 # --------------实习僧配置项--------------------
 # 是否投递(不投递:0,投递优先在线简历:1,投递优先离线简历:2)
+shixiseng_postnumber=0
 shixiseng_poststate = 0
 # Cookie(参考wiki说明获取)
 shixiseng_Cookie = ''
@@ -42,6 +43,7 @@ shixiseng_Search = {
     'payment_per_day': ""  # 日薪：200-300|100以下
 }
 # --------------易展翅配置项--------------------
+yizhanchi_postnumber=0
 yizhanchi_poststate = 0
 yizhanchi_city=""
 yizhanchi_Cookie =""
@@ -71,6 +73,7 @@ yizhanchi_Search = {
 }
 # --------------Boss直聘配置项--------------------
 bosszhipin_poststate = 0
+bosszhipin_postnumber=0
 bosszhipin_city=""
 bosszhipin_Cookie =""
 bosszhipin_Search = {
@@ -94,8 +97,11 @@ bosszhipin_Search = {
 }
 # --------------智联招聘--------------------
 zhilianzhaopin_poststate = 0
+zhilianzhaopin_postnumber=0
+zhilianzhaopin_Chatstate = 0
 # Cookie(参考wiki说明获取)
 zhilianzhaopin_Cookie = ''
+zhilianzhaopin_cvNumber=''
 zhilianzhaopin_Search ={
     "pageIndex": "1",
     "S_SOU_WORK_CITY": "",#城市ID
@@ -105,7 +111,7 @@ zhilianzhaopin_Search ={
     "pageSize": "30",
     "keywordChange": "1",
     "S_SOU_FULL_INDEX": "",#岗位
-    "cvNumber": "",#你的ID
+    "cvNumber": zhilianzhaopin_cvNumber,#你的ID
     "x-zp-utm-client-version": "u",
     "rt": "",
     "d": "",
@@ -122,6 +128,7 @@ zhilianzhaopin_Search ={
 }
 # --------------脉脉--------------------
 maimai_poststate = 0
+maimai_postnumber=0
 # Cookie(参考wiki说明获取)
 maimai_Token = ''#你的token,在Cookie
 maimai_Cookie = ''
@@ -164,7 +171,7 @@ maimai_Search  = {
     'hms_oaid': "",
     'sm_dl': "0",
     'sm_did': "",
-    'u': "242374278",
+    'u': "",
     'access_token': maimai_Token,#你的token
     'webviewUserAgent': "Mozilla/5.0 (Linux; Android 14; 21051182C Build/UQ1A.240105.004.A1; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/128.0.6613.40 Safari/537.36",
     'density': "1.875",
@@ -176,8 +183,11 @@ maimai_Search  = {
 }
 # --------------58同城--------------------
 wubatongcheng_poststate = 0
+wubatongcheng_postnumber=0
+wubatongcheng_Chatstate=0
 # Cookie(参考wiki说明获取)
 wubatongcheng_clientid = ''
+wubatongcheng_cityid=''
 wubatongcheng_Search  = {
     'os': "android",
     'v': "1",
@@ -189,7 +199,7 @@ wubatongcheng_Search  = {
     'action': "getListInfo,getFilterInfo,getRecTagInfo",
     'pagetype': "filterList",
     'filterParams': "{\"filterLocalId\":\"-1\",\"filterLocal\":\"\"}",
-    'localname': "sz",
+    'localname': "",
     'isNeedAd': "1",
     'page': "1",
     'extendParams': "{\"intentionArray\":[]}"

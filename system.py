@@ -1,5 +1,5 @@
 successful_deliveries = []
-version='V3.0'
+version='V7.0'
 ResultUrl = 'http://www.pushplus.plus/send'
 shixiseng_SearchUrl = "https://apigateway-h3.shixiseng.com/api/interns/v3.0/interns/wxz/search/v4"
 shixiseng_GroupUrl = "https://apigateway-h3.shixiseng.com/api/deliver/v3.0/deliver/options"
@@ -12,7 +12,9 @@ Bosszhipin_SearchUrl = "https://www.zhipin.com/wapi/zpgeek/search/joblist.json"
 Bosszhipin_PostUrl = "https://www.zhipin.com/wapi/zpgeek/friend/add.json"
 zhilianzhaopin_SearchUrl = "https://cgate.zhaopin.com/positionbusiness/searchrecommend/searchPositions"
 zhilianzhaopin_PostUrl = "https://cgate.zhaopin.com/positionbusiness/delivery/positionApply"
+zhilianzhaopin_Chat = "https://cgate.zhaopin.com/imapi/imV2/createAndUpdateContextV2"
 maimai_SearchUrl = "https://h3.open.taou.com/maimai/search_front/app/job_search"
 maimai_PostUrl = "https://maimai.cn/sdk/jobs/job/send_resume"
 wubatongcheng_SearchUrl = "https://app.58.com/api/list/quanzhizhaopin"
 wubatongcheng_PostUrl = "https://jlwebapp.58.com//resumedelivery/process"
+wubatongcheng_Chat = "https://wbim.58.com/im/precheck"

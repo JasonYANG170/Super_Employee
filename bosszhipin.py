@@ -2,7 +2,8 @@
 import time
 import requests
 import json
-from UserDefined import bosszhipin_city, bosszhipin_Search, bosszhipin_poststate, bosszhipin_Cookie
+from UserDefined import bosszhipin_city, bosszhipin_Search, bosszhipin_poststate, bosszhipin_Cookie, \
+    bosszhipin_postnumber
 from system import Bosszhipin_CitylistUrl, Bosszhipin_SearchUrl, successful_deliveries, Bosszhipin_PostUrl
 
 
@@ -50,6 +51,8 @@ def run_bosszhipin_script():
             print(response.text)
             item_list = data['zpData']['jobList']
 
+            if bosszhipin_successCount>=bosszhipin_postnumber:
+                break
             if not item_list:
                 break
 

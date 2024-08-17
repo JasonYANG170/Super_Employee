@@ -1,8 +1,11 @@
 # main_script.py
 import requests
 import json
-from UserDefined import wubatongcheng_poststate, wubatongcheng_clientid, wubatongcheng_Search,deviceName
-from system import successful_deliveries,wubatongcheng_SearchUrl,wubatongcheng_PostUrl
+from UserDefined import wubatongcheng_poststate, wubatongcheng_clientid, wubatongcheng_Search, deviceName, \
+    wubatongcheng_cityid, wubatongcheng_Chatstate, wubatongcheng_postnumber
+from system import successful_deliveries, wubatongcheng_SearchUrl, wubatongcheng_PostUrl, wubatongcheng_Chat
+
+
 def run_wubatongcheng_script():
     # 初始化变量
     wubatongcheng_successCount = 0
@@ -43,7 +46,7 @@ def run_wubatongcheng_script():
         'buildtime': "",
         'bangbangid': "",
         'xxwxtoken': "",
-        'cid': "4",
+        'cid': wubatongcheng_cityid,
         'ajkAuthTicket': "",
         'xxzlsid': "",
         'scale': "1",
@@ -100,6 +103,8 @@ def run_wubatongcheng_script():
                 data = wubatongcheng_SearchResponse.json()
                 items = data['jobList']['data']
 
+                if wubatongcheng_successCount>=wubatongcheng_postnumber:
+                    break
                 if not items:
                     break
 
@@ -142,9 +147,28 @@ def run_wubatongcheng_script():
                     #      usegroup = group_list[1]
                     #  elif (wubatongcheng_poststate == 0 and (deliver_able_online or deliver_able_local)):
                     #      usegroup = None
+                    if (wubatongcheng_Chatstate==1):
+                        wubatongcheng_Chatpayload = "infoId=57464116683181&scene=job_detail&tjfrom=app_list_search_mxn__143164519225947239129717587__723395933378117632__tegptplus__I%2CL__4____null__eyJyIjp7InNwbSI6IiIsImluZm9pZCI6IjU3NDY0MTE2NjgzMTgxIiwic2xvdCI6ImFwcF9saXN0X3NlYXJjaF9teG4iLCJ0eXBlIjoidGVncHRwbHVzIiwic2lkIjoiMTQzMTY0NTE5MjI1OTQ3MjM5MTI5NzE3NTg3IiwidXRtIjoiIiwiY2lkIjoiMTM2NiJ9LCJ0IjoxLCJ2IjoxLCJ3Ijp7InNsb3RfZnJvbSI6ImFwcF9taWRkbGVfc2VhcmNoIn19&platform=3"
+                        wubatongcheng_ChatResponse = requests.post(wubatongcheng_Chat, data=wubatongcheng_Chatpayload, headers=wubatongcheng_headers)
+                        data = wubatongcheng_ChatResponse.json()
+                        wubatongcheng_wubatongcheng_Chatstate = data['message']
+                        if wubatongcheng_wubatongcheng_Chatstate == '成功'and wubatongcheng_poststate==0:
+                            wubatongcheng_successCount += 1
+                            delivery_info = {
+                                "UUID": uuid,
+                                "公司": company,
+                                "城市": city,
+                                "岗位": job,
+                                "薪资": salary_desc,
+                                "福利": attraction_str,
+                                #    "投递来自": "在线简历" if usegroup == group_list[0] else "本地简历"
+                            }
+                            successful_deliveries.append(delivery_info)
+                        elif wubatongcheng_poststate==0:
+                            wubatongcheng_errorCount += 1
                     if (wubatongcheng_poststate==1):
                         wubatongcheng_Postpayload  = {
-                            "infoId=uuid&os=android&pt=0&ceping=0&format=json&wechat=0&aiScene=4&ct=4&resumeId=&completeResume=0&deliverySource=8&v=1&curVer=13.10.2&downloadApp=0&appId=1&tjfrom=&synYingcai=0&sidDict="
+                            "infoId="+uuid+"&os=android&pt=0&ceping=0&format=json&wechat=0&aiScene=4&ct=4&resumeId=&completeResume=0&deliverySource=8&v=1&curVer=13.10.2&downloadApp=0&appId=1&tjfrom=&synYingcai=0&sidDict="
                         }
 
 

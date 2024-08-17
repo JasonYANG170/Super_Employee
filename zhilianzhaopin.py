@@ -1,8 +1,11 @@
 # main_script.py
 import requests
 import json
-from UserDefined import zhilianzhaopin_poststate, zhilianzhaopin_Cookie, zhilianzhaopin_Search,deviceName
-from system import successful_deliveries,zhilianzhaopin_SearchUrl,zhilianzhaopin_PostUrl
+from UserDefined import zhilianzhaopin_poststate, zhilianzhaopin_Cookie, zhilianzhaopin_Search, deviceName, \
+    zhilianzhaopin_cvNumber, zhilianzhaopin_Chatstate, zhilianzhaopin_postnumber
+from system import successful_deliveries, zhilianzhaopin_SearchUrl, zhilianzhaopin_PostUrl, zhilianzhaopin_Chat
+
+
 def run_zhilianzhaopin_script():
     # 初始化变量
     zhilianzhaopin_successCount = 0
@@ -54,6 +57,8 @@ def run_zhilianzhaopin_script():
                 data = zhilianzhaopin_SearchResponse.json()
                 items = data['data']['list']
 
+                if zhilianzhaopin_successCount>=zhilianzhaopin_postnumber:
+                    break
                 if not items:
                     break
 
@@ -64,7 +69,9 @@ def run_zhilianzhaopin_script():
                 salary_desc_list = [item['salary60'] for item in items]
                 attraction_list = [item['welfareTagList'] for item in items]
                 city_list = [item['workCity'] for item in items]
-
+                rootCompanyNumber = [item['rootCompanyNumber'] for item in items]
+                jobId = [item['jobId'] for item in items]
+                companyId= [item['companyId'] for item in items]
                 print("------------智联招聘-------------")
                 print("在智联招聘平台找到以下岗位，即将为您投递:")
                 print("---------------------------------")
@@ -96,6 +103,53 @@ def run_zhilianzhaopin_script():
                    #      usegroup = group_list[1]
                    #  elif (zhilianzhaopin_poststate == 0 and (deliver_able_online or deliver_able_local)):
                    #      usegroup = None
+
+                    if(zhilianzhaopin_Chatstate==1):
+                        zhilianzhaopin_Chatparams = {
+                            'businessOperation': "POSITION_DETAIL_APPLY",
+                            'jobTitle': job,
+                            'stSourceCode': "5019",
+                            'jobId': jobId,
+                            'companyId': companyId,
+                            'resumeId': "523222527",
+                            'positionChatScene': "1",
+                            'stAction': "601",
+                            'rootCompanyId': rootCompanyNumber,
+                            'resumeNumber': zhilianzhaopin_cvNumber,
+                            'staffId': "1117787837",
+                            'jobNumber': uuid,
+                            'resumeLanguage': "0",
+                            'x-zp-utm-client-version': "u",
+                            'rt': "dcca32868511402db6106f553f231d3a",
+                            'd': "00000000-0543-0650-ffff-ffffef05ac4a",
+                            'os_version': "14",
+                            'channel': "tengxun",
+                            'version': "8.11.26",
+                            'platform': "4",
+                            'at': "51fb6d8c840b490ebd3bb476dc53e229",
+                            'identity': "1",
+                            'businessLine': "com.zhaopin.social",
+                            'anonymous': "0",
+                            'userRole': "0",
+                            'oaid': ""
+                        }
+                        zhilianzhaopin_ChatResponse = requests.get(zhilianzhaopin_Chat, params=zhilianzhaopin_Chatparams, headers=zhilianzhaopin_headers)
+                        data = zhilianzhaopin_ChatResponse.json()
+                        zhilianzhaopin_zhilianzhaopin_Chatstate = data['message']
+                        if zhilianzhaopin_zhilianzhaopin_Chatstate == '成功' and zhilianzhaopin_poststate==0:
+                            zhilianzhaopin_successCount += 1
+                            delivery_info = {
+                                "UUID": uuid,
+                                "公司": company,
+                                "城市": city,
+                                "岗位": job,
+                                "薪资": salary_desc,
+                                "福利": attraction_str,
+                                #    "投递来自": "在线简历" if usegroup == group_list[0] else "本地简历"
+                            }
+                            successful_deliveries.append(delivery_info)
+                        elif zhilianzhaopin_poststate==0:
+                            zhilianzhaopin_errorCount += 1
                     if (zhilianzhaopin_poststate==1):
                         zhilianzhaopin_Postpayload = json.dumps({
                             "st_page": "5019",
@@ -119,7 +173,7 @@ def run_zhilianzhaopin_script():
                             "attachmentDefaultFileId": "",
                             "businessOperation": "POSITION_DETAIL_APPLY",
                             "resumeVersion": "1",
-                            "resumeNumber": "E7B8AF54DD3376FDA5A9B05CD09B5CC0F6037F86044EB47E5AB3EE3D1ECB9804234E45D6A6C667951BF55660FBE10B1D_A0001",
+                            "resumeNumber": zhilianzhaopin_cvNumber,
                             "language": "3",
                             "x-zp-utm-client-version": "u",
                             "rt": "",

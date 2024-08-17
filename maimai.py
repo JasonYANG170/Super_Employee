@@ -1,7 +1,7 @@
 # main_script.py
 import requests
 import json
-from UserDefined import maimai_poststate, maimai_Cookie, maimai_Search, deviceName, maimai_Token
+from UserDefined import maimai_poststate, maimai_Cookie, maimai_Search, deviceName, maimai_Token, maimai_postnumber
 from system import successful_deliveries,maimai_SearchUrl,maimai_PostUrl
 def run_maimai_script():
     # 初始化变量
@@ -35,6 +35,8 @@ def run_maimai_script():
                 data = maimai_SearchResponse.json()
                 items = data['data']
 
+                if maimai_successCount>=maimai_postnumber:
+                    break
                 if not items:
                     break
 
