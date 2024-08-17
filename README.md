@@ -26,7 +26,6 @@
 - ✅ Qinglong panel or Server
 - ✅ Local  (Windows\Linux\MacOS)
 - 🚧 DockerHub  
-(推荐使用中国IP部署)
 ## 支持平台
 - ✅ 实习僧  
 - ✅ 翼展翅  
