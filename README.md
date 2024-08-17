@@ -24,7 +24,7 @@
 - ✅ Qinglong panel or Server
 - ✅ Local  (Windows\Linux\MacOS)
 - 🚧 DockerHub  
-(除Linkedin外推荐使用中国IP部署)
+(推荐使用中国IP部署)
 ## 支持平台
 - ✅ 实习僧  
 - ✅ 翼展翅  
@@ -33,7 +33,6 @@
 - ✅ 脉脉
 - ✅ 智联招聘
 - ✅ 58同城
-- 🚧 Linkedin
 ## 功能
 - ✅ 自定义筛选 
 - ✅ 自动投递直到上限
