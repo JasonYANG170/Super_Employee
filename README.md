@@ -19,28 +19,29 @@
 ## 说明
 本项目致力于帮助24届1179万应届毕业生及25届实习生招聘投递  
 
-本项目处于开发阶段，计划于**08/18日前完成提交**，欢迎测试
+## 教程
+本程序现以上线，Wiki教程已完成，如有其他问题请在Issues提出
+https://github.com/JasonYANG170/Super_Employee/wiki
 
 ## 部署平台
-- ✅Github Action  
-- ✅Qinglong panel
-- ✅Local
+- 🚧 Github Action  
+- ✅ Qinglong panel or Server
+- ✅ Local
 - 🚧 DockerHub  
 (除Linkedin外推荐使用中国IP部署)
 ## 支持平台
 - ✅ 实习僧  
-- ✅ 易展翅  
-- 🚧 Boss直聘  
+- ✅ 翼展翅  
+- ✅ Boss直聘  
 - 🚧 51 Job
 - 🚧 Linkedin
-## 计划功能
+## 功能
 - ✅ 自定义筛选 
 - ✅ 自动投递直到上限
 - ✅ 定时投递
 - ✅ 通知提醒
-- 🚧 自定义招呼
-- 🚧 优先投递活跃Boss  
-- 🚧 AI对话智能应答  
+- ✅ 更新提醒
+- ✅ 优先投递活跃Boss 
 
 ## 开源协议
 本项目遵循GPL3.0开源协议，如果您有更好的建议，欢迎PR
