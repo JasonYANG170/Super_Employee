@@ -2,11 +2,16 @@
 import requests
 import json
 from UserDefined import poststate, UseResultPush, PushToken, shixiseng_state, yizhanchi_state, bosszhipin_state, \
-    bosszhipin_poststate, yizhanchi_poststate, shixiseng_poststate
+    bosszhipin_poststate, yizhanchi_poststate, shixiseng_poststate, zhilianzhaopin_state, zhilianzhaopin_poststate, \
+    maimai_state, maimai_poststate, wubatongcheng_state, wubatongcheng_poststate
 from bosszhipin import run_bosszhipin_script
+from maimai import run_maimai_script
 from system import ResultUrl, successful_deliveries
 from shixiseng import run_shixiseng_script
+from wubatongcheng import run_wubatongcheng_script
 from yizhanchi import run_yizhanchi_script
+from zhilianzhaopin import run_zhilianzhaopin_script
+
 
 def send_notifications():
     findCount=0
@@ -21,6 +26,15 @@ def send_notifications():
     notify_bosszhipin_findCount=0
     notify_bosszhipin_successCount=0
     notify_bosszhipin_errorCount=0
+    notify_zhilianzhaopin_findCount=0
+    notify_zhilianzhaopin_successCount=0
+    notify_zhilianzhaopin_errorCount=0
+    notify_maimai_findCount=0
+    notify_maimai_successCount=0
+    notify_maimai_errorCount=0
+    notify_wubatongcheng_findCount=0
+    notify_wubatongcheng_successCount=0
+    notify_wubatongcheng_errorCount=0
     notify = "------------Notify---------------\n"
     if poststate in [1, 2]:
         if(shixiseng_state==1):
@@ -47,6 +61,30 @@ def send_notifications():
             notify_bosszhipin_successCount=bosszhipin_successCount
             errorCount=errorCount + bosszhipin_errorCount
             notify_bosszhipin_errorCount=bosszhipin_errorCount
+        if(zhilianzhaopin_state==1):
+            zhilianzhaopin_findCount, zhilianzhaopin_successCount, zhilianzhaopin_errorCount = run_zhilianzhaopin_script()
+            findCount=findCount + zhilianzhaopin_findCount
+            notify_zhilianzhaopin_findCount=zhilianzhaopin_findCount
+            successCount=successCount + zhilianzhaopin_successCount
+            notify_zhilianzhaopin_successCount=zhilianzhaopin_successCount
+            errorCount=errorCount + zhilianzhaopin_errorCount
+            notify_zhilianzhaopin_errorCount=zhilianzhaopin_errorCount
+        if(maimai_state==1):
+            maimai_findCount, maimai_successCount,maimai_errorCount = run_maimai_script()
+            findCount=findCount + maimai_findCount
+            notify_maimai_findCount=maimai_findCount
+            successCount=successCount + maimai_successCount
+            notify_maimai_successCount=maimai_successCount
+            errorCount=errorCount + maimai_errorCount
+            notify_maimai_errorCount=maimai_errorCount
+        if(wubatongcheng_state==1):
+            wubatongcheng_findCount, wubatongcheng_successCount,wubatongcheng_errorCount = run_wubatongcheng_script()
+            findCount=findCount + wubatongcheng_findCount
+            notify_wubatongcheng_findCount=wubatongcheng_findCount
+            successCount=successCount + wubatongcheng_successCount
+            notify_wubatongcheng_successCount=wubatongcheng_successCount
+            errorCount=errorCount + wubatongcheng_errorCount
+            notify_wubatongcheng_errorCount=wubatongcheng_errorCount
         notify += (f"今日总共找到{findCount}家公司\n"
                    f"投递成功{successCount}份，投递失败{errorCount}份\n"
                    f"-------------实习僧数据------------\n"
@@ -64,6 +102,21 @@ def send_notifications():
                     f"投递成功{notify_bosszhipin_successCount}份，投递失败{notify_bosszhipin_errorCount}份\n")
         if(bosszhipin_poststate==0):
             notify += ( f"您未开启Boss直聘投递，本次投递跳过\n")
+        notify += ( f"-------------智联招聘数据------------\n"
+                    f"找到{notify_zhilianzhaopin_findCount}家公司\n"
+                    f"投递成功{notify_zhilianzhaopin_successCount}份，投递失败{notify_zhilianzhaopin_errorCount}份\n")
+        if(zhilianzhaopin_poststate==0):
+            notify += ( f"您未开启智联招聘投递，本次投递跳过\n")
+        notify += ( f"-------------脉脉数据------------\n"
+                        f"找到{notify_maimai_findCount}家公司\n"
+                        f"投递成功{notify_maimai_successCount}份，投递失败{notify_maimai_errorCount}份\n")
+        if(maimai_poststate==0):
+            notify += ( f"您未开启脉脉投递，本次投递跳过\n")
+        notify += ( f"-------------58同城数据------------\n"
+                    f"找到{notify_wubatongcheng_findCount}家公司\n"
+                    f"投递成功{notify_wubatongcheng_successCount}份，投递失败{notify_wubatongcheng_errorCount}份\n")
+        if(wubatongcheng_poststate==0):
+            notify += ( f"您未开启58同城投递，本次投递跳过\n")
         try:
             notify += "---------成功投递的岗位信息-------\n"
             for delivery in successful_deliveries:
