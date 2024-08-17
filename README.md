@@ -20,7 +20,7 @@
 本项目致力于帮助24届1179万应届毕业生及25届实习生招聘投递  
 
 ## 部署平台
-- 🚧 Github Action  
+- ✅ Github Action  
 - ✅ Qinglong panel or Server
 - ✅ Local
 - 🚧 DockerHub  
