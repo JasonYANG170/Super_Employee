@@ -19,10 +19,6 @@
 ## 说明
 本项目致力于帮助24届1179万应届毕业生及25届实习生招聘投递  
 
-## 教程
-本程序现以上线，Wiki教程已完成，如有其他问题请在Issues提出
-https://github.com/JasonYANG170/Super_Employee/wiki
-
 ## 部署平台
 - 🚧 Github Action  
 - ✅ Qinglong panel or Server
@@ -48,6 +44,10 @@ https://github.com/JasonYANG170/Super_Employee/wiki
 
 ## 开源协议
 本项目遵循GPL3.0开源协议，如果您有更好的建议，欢迎PR
+
+## 教程
+本程序现以上线，Wiki教程已完成，如有其他问题请在Issues提出
+https://github.com/JasonYANG170/Super_Employee/wiki
 
 ## 喜欢这个项目，请为我点个Star ⭐ 
 
