@@ -22,7 +22,7 @@
 ## 部署平台
 - ✅ Github Action  
 - ✅ Qinglong panel or Server
-- ✅ Local
+- ✅ Local(Windows\Linux\MacOS)
 - 🚧 DockerHub  
 (除Linkedin外推荐使用中国IP部署)
 ## 支持平台
