@@ -1,7 +1,7 @@
 # main_script.py
 import requests
 import json
-from UserDefined import shixiseng_poststate, shixiseng_Cookie, shixiseng_Search,deviceName
+from UserDefined import shixiseng_poststate, shixiseng_Cookie, shixiseng_Search, deviceName, shixiseng_postnumber
 from system import successful_deliveries,shixiseng_SearchUrl,shixiseng_GroupUrl,shixiseng_PostUrl
 def run_shixiseng_script():
     # 初始化变量
@@ -33,7 +33,8 @@ def run_shixiseng_script():
             try:
                 data = shixiseng_SearchResponse.json()
                 items = data['msg']['data']
-
+                if shixiseng_successCount>=shixiseng_postnumber:
+                    break
                 if not items:
                     break
 
