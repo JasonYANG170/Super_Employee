@@ -18,22 +18,21 @@
 
 ## 说明
 本项目致力于帮助24届1179万应届毕业生及25届实习生招聘投递  
+本程序的开发主要用于帮助求职人员快速完成投递，以及减少平台过度获取用户隐私数据  
+严禁将本程序用于违法用途，请遵守地区法规，另如有违背平台利益请与我联系撤销平台支持
 
 ## 部署平台
-- 🚧 Github Action  
+- ✅ Github Action  
 - ✅ Qinglong panel or Server
-- ✅ Local
+- ✅ Local  (Windows\Linux\MacOS)
 - 🚧 DockerHub  
-(除Linkedin外推荐使用中国IP部署)
 ## 支持平台
 - ✅ 实习僧  
 - ✅ 翼展翅  
 - ✅ Boss直聘  
-- ✅ 51 Job
 - ✅ 脉脉
 - ✅ 智联招聘
 - ✅ 58同城
-- 🚧 Linkedin
 ## 功能
 - ✅ 自定义筛选 
 - ✅ 自动投递直到上限
