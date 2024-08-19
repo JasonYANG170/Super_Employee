@@ -22,8 +22,8 @@ maimai_state = 0
 wubatongcheng_state = 0
 # --------------实习僧配置项--------------------
 # 是否投递(不投递:0,投递优先在线简历:1,投递优先离线简历:2)
-shixiseng_postnumber=0
-shixiseng_poststate = 0
+shixiseng_postnumber=0#想要推送的数量
+shixiseng_poststate = 0#是否开启推送。0:否，1:是
 # Cookie(参考wiki说明获取)
 shixiseng_Cookie = ''
 # 筛选条件(带‘*’号的为必填项)
@@ -43,9 +43,9 @@ shixiseng_Search = {
     'payment_per_day': ""  # 日薪：200-300|100以下
 }
 # --------------易展翅配置项--------------------
-yizhanchi_postnumber=0
-yizhanchi_poststate = 0
-yizhanchi_city=""
+yizhanchi_postnumber=0#想要推送的数量
+yizhanchi_poststate = 0#是否开启推送。0:否，1:是
+yizhanchi_city=""#城市
 yizhanchi_Cookie =""
 yizhanchi_Search = {
     'page_size': "1000",#查询范围  *
@@ -72,9 +72,9 @@ yizhanchi_Search = {
     'sort': ""
 }
 # --------------Boss直聘配置项--------------------
-bosszhipin_poststate = 0
-bosszhipin_postnumber=0
-bosszhipin_city=""
+bosszhipin_poststate = 0#是否开启推送。0:否，1:是
+bosszhipin_postnumber=0#想要推送的数量
+bosszhipin_city=""#城市
 bosszhipin_Cookie =""
 bosszhipin_Search = {
     'scene': "1",
@@ -96,15 +96,15 @@ bosszhipin_Search = {
     'pageSize': "5000"
 }
 # --------------智联招聘--------------------
-zhilianzhaopin_poststate = 0
-zhilianzhaopin_postnumber=0
-zhilianzhaopin_Chatstate = 0
+zhilianzhaopin_poststate = 0#是否开启推送。0:否，1:是
+zhilianzhaopin_postnumber=0#想要推送的数量
+zhilianzhaopin_Chatstate = 0#是否开启聊天打招呼。0:否，1:是
 # Cookie(参考wiki说明获取)
 zhilianzhaopin_Cookie = ''
 zhilianzhaopin_cvNumber=''
 zhilianzhaopin_Search ={
     "pageIndex": "1",
-    "S_SOU_WORK_CITY": "",#城市ID
+    "S_SOU_WORK_CITY": "",#城市ID（教程获取）
     "eventScenario": "",
     "filterMinSalary": "1",
     "S_SOU_EXPAND": "SOU_COMPANY_ID",
@@ -127,8 +127,8 @@ zhilianzhaopin_Search ={
     "oaid": ""
 }
 # --------------脉脉--------------------
-maimai_poststate = 0
-maimai_postnumber=0
+maimai_poststate = 0#是否开启推送。0:否，1:是
+maimai_postnumber=0#想要推送的数量
 # Cookie(参考wiki说明获取)
 maimai_Token = ''#你的token,在Cookie
 maimai_Cookie = ''
@@ -182,12 +182,12 @@ maimai_Search  = {
     'last_launch_time': ""
 }
 # --------------58同城--------------------
-wubatongcheng_poststate = 0
-wubatongcheng_postnumber=0
-wubatongcheng_Chatstate=0
+wubatongcheng_poststate = 0#是否开启推送。0:否，1:是
+wubatongcheng_postnumber=0#想要推送的数量
+wubatongcheng_Chatstate=0#是否开启聊天打招呼。0:否，1:是
 # Cookie(参考wiki说明获取)
 wubatongcheng_clientid = ''
-wubatongcheng_cityid=''
+wubatongcheng_cityid=''#城市ID（教程获取）
 wubatongcheng_Search  = {
     'os': "android",
     'v': "1",
