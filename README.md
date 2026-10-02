@@ -1,3 +1,5 @@
+[简体中文](README.md) | [English](README_en.md)
+
 <div align="center">
     <h1>Super Employee自动投递脚本</h1>
     <img src="https://img.shields.io/github/license/JasonYANG170/IM_THE_BOSS?label=License&style=for-the-badge">
