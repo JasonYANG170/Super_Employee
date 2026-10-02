@@ -21,7 +21,7 @@ A Python script for submitting job applications.
 ## Overview
 This project aims to help the 11.79 million graduates of the class of 2024 and internship applicants from the class of 2025 submit job applications.
 The development of this program is mainly used to help job seekers complete their submissions quickly and reduce the excessive acquisition of user privacy data by the platform.
-It is strictly prohibited to use this program for illegal purposes. Please abide by regional regulations. If it violates the interests of the platform, please contact me to withdraw platform support.
+It is strictly prohibited to use this program for illegal purposes. Please comply with applicable laws and regulations. If it violates the interests of the platform, please contact me to withdraw platform support.
 
 ## Deployment platform
 - ✅ Github Action  
